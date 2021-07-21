@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 my-3 mx-auto">
+      <h1>Add a new flat</h1>
+      <%= render 'form', flat: @flat %>
+    <div class="d-flex justify-content-start my-3">
+      <%= link_to "Back to flats", flats_path, class: "btn btn-outline-secondary" %>
+    </div>
+    </div>
+  </div>
+</div>

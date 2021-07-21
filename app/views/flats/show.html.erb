@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-6 my-3 mx-auto">
+
+      <h1 class="text-center"><%= @flat.name %></h1>
+
+      <div class="card" style="height:100%;">
+        <img class="card-img-top img-cover" src="<%= @flat.image_url %>" alt="Card image cap">
+
+        <div class="card-body">
+          <p class="card-text"><%= @flat.address %></p>
+        </div>
+
+        <div class="card-body">
+          <p class="card-text"><%= @flat.description %></p>
+        </div>
+
+        <div class="card-body mx-auto">
+          <p class="card-text"><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %></p>
+        </div>
+
+        <div class="card-body mx-auto">
+          <p class="card-text"><i class="fas fa-dollar-sign"></i> <%= @flat.price_per_night %></p>
+        </div>
+
+        <div class="card-body">
+          <div class="d-flex justify-content-around">
+              <%= link_to "Back to flats", flats_path, class: "btn btn-outline-secondary" %>
+              <%= link_to "Edit flat", edit_flat_path(@flat), class: "btn btn-outline-info" %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsSimpleAirbnb</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RailsSimpleAirbnb</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/31aab5d7d8.js" crossorigin="anonymous"></script>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+
+    <div>
+      <%= link_to "Simple Airbnb", flats_path, class: 'btn btn-sm btn-outline-secondary navbar-button' %>
+    </div>
+
+    <div class="d-flex">
+      <div class="d-flex">
+        <form action="/flats/query">
+          <div class="d-flex mx-3">
+            <% placeholder= @query ? @query : "Search" %>
+            <input type="search" name="search" placeholder=<%= placeholder %> aria-label="Search">
+            <button class="btn btn-sm btn-outline-secondary mx-1" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <%= link_to "Add flat", new_flat_path, class: 'btn btn-sm btn-outline-secondary navbar-button' %>
+      </div>
+    </div>
+
+
+  </div>
+  <%= yield %>
+</body>
 </html>

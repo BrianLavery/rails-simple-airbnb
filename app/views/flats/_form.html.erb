@@ -1,0 +1,9 @@
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night, input_html: { min: 0, step: 'any' } %>
+  <%= f.input :number_of_guests, input_html: { min: 0, step: 'any' } %>
+  <%= f.input :image_url %>
+  <%= f.submit %>
+<% end %>
